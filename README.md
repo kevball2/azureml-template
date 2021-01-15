@@ -12,6 +12,7 @@ Welcome to the Azure Machine Learning (AML) template repository!
 
 1. An Azure subscription. If you don't have an Azure subscription, [create a free account](https://aka.ms/AMLFree) before you begin.
 2. A terminal and Python >=3.6,[\<3.9](https://pypi.org/project/azureml-core).
+3. A Conda or Python virtual environment [Minieconda installer](https://docs.conda.io/en/latest/miniconda.html)
 
 ## Getting started
 
@@ -23,13 +24,29 @@ Follow the setup guide below to add your Azure credentials and create required A
 - code format check on push/PR
 - resource cleanup script running nightly
 
+## Environment 
+If no conda environment has been created you will need to create one (If a conda environment already exists make sure it is active)
+```console
+conda create -n <virtual_environment_name> python=3.8.5
+conda activate <virtual_environment_name>
+```
+
+After the conda evironment is activate, install the required packages with pip
+```console
+pip install -r requirements.txt
+```
+Azure CLI setup, follow instructions to login to your azure account
+```console
+az login
+```
 ## Setup
 
-First, export your Azure subscription id as an environment variable:
+First, export your Azure subscription id as an environment variable, you will need to need your subscription Azure portal:
 
 ```console
 export ID=<your-subscription-id>
 ```
+
 
 Second, create the Azure resource group and required AML resources:
 

@@ -1,5 +1,6 @@
 azureml-core>=1.15.0
 azureml-dataprep
 azureml-mlflow
+azure-cli
 papermill
 black

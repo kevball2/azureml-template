@@ -9,13 +9,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--subscription-id", type=str, default=None)
 parser.add_argument("--workspace-name", type=str, default="default")
 parser.add_argument("--resource-group", type=str, default="azureml-template")
-parser.add_argument("--location", type=str, default="eastus")
+parser.add_argument("--location", type=str, default="northcentralus")
 args = parser.parse_args()
 
 # define aml compute target(s) to create
 amlcomputes = {
     "cpu-cluster": {
-        "vm_size": "STANDARD_DS3_V2",
+        "vm_size": "STANDARD_DS3_V3",
         "min_nodes": 0,
         "max_nodes": 3,
         "idle_seconds_before_scaledown": 1200,
